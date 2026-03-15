@@ -10,6 +10,8 @@
 - `db/legacy-schema.sql` : 저장소용으로 복사한 레거시 DDL 스냅샷
 - `db/schema-columns.txt` : 현재 Oracle import 기준 테이블/컬럼 원본 목록
 - `db/schema-summary.md` : 현재 Oracle import 기준 사람이 읽기 쉬운 스키마 요약
+- `db/erd.md` : Mermaid 기반 ERD 요약
+- `db/relationships.md` : 핵심 관계/업무 의미 설명
 
 ## 제외 내용
 저장소 용량과 민감한 백업 데이터를 고려해 아래 파일들은 Git에 포함하지 않았습니다.
@@ -59,6 +61,8 @@ docker compose down -v
 - 레거시 스냅샷: `db/legacy-schema.sql`
 - 현재 import 기준 요약: `db/schema-summary.md`
 - 컬럼 원본 목록: `db/schema-columns.txt`
+- ERD: `db/erd.md`
+- 관계 설명: `db/relationships.md`
 
 주의: `legacy-schema.sql`과 실제 import된 Oracle 스키마 사이에는 도메인/팀/유저이미지 관련 차이가 있습니다.
 
