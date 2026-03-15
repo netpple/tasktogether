@@ -1,7 +1,6 @@
 <%@page import="com.google.gson.Gson"%>
 <%@page import="com.google.gson.JsonElement"%>
 <%@page import="com.google.gson.JsonObject"%>
-<%@page import="com.sun.image.codec.jpeg.JPEGCodec"%>
 <%@page import="com.twobrain.common.object.JsonFile"%>
 <%@page import="com.twobrain.common.util.JpegReader"%>
 <%@page import="org.apache.commons.fileupload.FileItem"%>
@@ -325,10 +324,8 @@
 					bsrc = JpegReader.readImage(srcFile);
 				}catch(IllegalArgumentException e2){
 					// Numbers of source Raster bands and source color space components do not match 라는 메세지와 함께 발생
-					// 특정 CMYK 이미지 읽을 경우 발생 하는 것 같은데..
-					// 보통 CMYK 이미지를 JPEGCodec을 사용하여 읽어 오면 색이 전부 깨져서 읽힌다.
-					// 그러나  IllegalArgumentException 경우 일때는 JPEGCodec으로 하여도 색이 깨지지 않는듯...?
-					bsrc = JPEGCodec.createJPEGDecoder(new FileInputStream(srcFile)).decodeAsBufferedImage();
+					// 구형 JPEGCodec 의존 대신 JpegReader 로 재시도한다.
+					bsrc = JpegReader.readImage(srcFile);
 				}catch(Exception e3){
 					//LogHandler.error(" __JM__ DEBUG :: Exception = " + e3.getMessage());
 					e3.printStackTrace(); // 이 외 예외가 더 발생할지 지켜 봐야할듯 _ // __131203__JM__
