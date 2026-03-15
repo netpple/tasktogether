@@ -7,7 +7,7 @@
 		return ;
 	}
 
-	_toolTabNo = -1 ; // 4 ;	// -- tooltab에서 제거 
+	_toolTabNo = 4 ;
 	
 	String btnTitle = "등록" ;
 	
