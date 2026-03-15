@@ -1,0 +1,16 @@
+<Context>
+  <Resource
+    name="jdbc/Timecloud"
+    auth="Container"
+    type="javax.sql.DataSource"
+    driverClassName="oracle.jdbc.driver.OracleDriver"
+    url="jdbc:oracle:thin:@timecloud-db:1521:XE"
+    username="timecloud"
+    password="timecloud"
+    initialSize="1"
+    maxTotal="20"
+    maxIdle="10"
+    maxWaitMillis="-1"
+    testOnBorrow="true"
+    validationQuery="SELECT 1 FROM DUAL" />
+</Context>

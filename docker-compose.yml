@@ -1,0 +1,37 @@
+services:
+  db:
+    image: gvenzl/oracle-xe:11-full
+    platform: linux/amd64
+    container_name: timecloud-db
+    environment:
+      ORACLE_PASSWORD: oracle
+    ports:
+      - "11521:1521"
+    volumes:
+      - timecloud-oradata:/opt/oracle/oradata
+      - ./workdir/timecloud.dmp:/opt/oracle/import/timecloud.dmp:ro
+      - ./docker/db/init/01_import.sh:/container-entrypoint-initdb.d/01_import.sh:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "echo 'select 1 from dual;' | sqlplus -s system/$${ORACLE_PASSWORD}@XE | grep -q 1",
+        ]
+      interval: 20s
+      timeout: 10s
+      retries: 30
+      start_period: 120s
+
+  app:
+    build:
+      context: .
+      dockerfile: docker/app.Dockerfile
+    container_name: timecloud-app
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "18080:8080"
+
+volumes:
+  timecloud-oradata:

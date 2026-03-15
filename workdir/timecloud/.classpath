@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="WEB-INF/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 6 (MacOS X Default)"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-dbcp-1.4.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-pool-1.6.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jdom.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-fileupload-1.2.2.jar" sourcepath="/Users/InSeoHwang/.m2/repository/commons-fileupload/commons-fileupload/1.2.2/commons-fileupload-1.2.2-sources.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jsornorg.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/imgscalr-lib-4.2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/lombok.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/mail.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/gson-2.2.4.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/sanselan-0.97-incubator.jar"/>
+	<classpathentry kind="output" path="WEB-INF/classes"/>
+</classpath>

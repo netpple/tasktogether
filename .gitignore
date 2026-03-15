@@ -1,0 +1,7 @@
+.omx/
+*.sql
+*.dmp
+*.zip
+*.pdf
+.DS_Store
+/tmp/
