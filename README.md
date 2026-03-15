@@ -6,7 +6,10 @@
 - `workdir/timecloud/` : 복원된 JSP/Servlet 애플리케이션 소스 및 정적 자산
 - `docker/` : Tomcat/Oracle XE 컨테이너 실행 설정
 - `docker-compose.yml` : 앱/DB 통합 기동 설정
-- `tasktogether_dtd` : 스키마 DDL 참고 파일
+- `tasktogether_dtd` : 원본 백업의 레거시 스키마 DDL
+- `db/legacy-schema.sql` : 저장소용으로 복사한 레거시 DDL 스냅샷
+- `db/schema-columns.txt` : 현재 Oracle import 기준 테이블/컬럼 원본 목록
+- `db/schema-summary.md` : 현재 Oracle import 기준 사람이 읽기 쉬운 스키마 요약
 
 ## 제외 내용
 저장소 용량과 민감한 백업 데이터를 고려해 아래 파일들은 Git에 포함하지 않았습니다.
@@ -51,6 +54,13 @@ docker compose down -v
 - 공통 알림 패널 렌더링 오류 수정
 - `project.jsp` include 누락 및 오타 수정
 - 프로필 이미지 경로를 실제 백업 파일명 규칙에 맞게 수정
+
+## DB 스키마
+- 레거시 스냅샷: `db/legacy-schema.sql`
+- 현재 import 기준 요약: `db/schema-summary.md`
+- 컬럼 원본 목록: `db/schema-columns.txt`
+
+주의: `legacy-schema.sql`과 실제 import된 Oracle 스키마 사이에는 도메인/팀/유저이미지 관련 차이가 있습니다.
 
 ## 현재 확인된 상태
 정상 응답 확인 완료:
